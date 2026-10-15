@@ -1,0 +1,37 @@
+# Learn more about configuring your app at https://shopify.dev/docs/apps/tools/cli/configuration
+
+client_id = "1932d60d25fb9f1052930ca78c51b354"
+name = "product-recommender"
+handle = "product-recommender-12"
+application_url = "https://guitars-optional-quantum-violin.trycloudflare.com"
+embedded = true
+
+[build]
+automatically_update_urls_on_dev = true
+dev_store_url = "v567-local.myshopify.com"
+include_config_on_deploy = true
+
+[access_scopes]
+# Learn more at https://shopify.dev/docs/apps/tools/cli/configuration#access_scopes
+scopes = "read_discounts,read_legal_policies,read_online_store_navigation,read_orders,read_products,read_themes,write_products,write_themes"
+
+[auth]
+redirect_urls = [
+  "https://guitars-optional-quantum-violin.trycloudflare.com/auth/callback",
+  "https://guitars-optional-quantum-violin.trycloudflare.com/auth/shopify/callback",
+  "https://guitars-optional-quantum-violin.trycloudflare.com/api/auth/callback"
+]
+
+[webhooks]
+api_version = "2024-10"
+
+  [[webhooks.subscriptions]]
+  topics = [
+  "discounts/create",
+  "discounts/delete",
+  "discounts/update",
+]
+  uri = "/api/webhooks"
+
+[pos]
+embedded = false

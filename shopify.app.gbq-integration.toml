@@ -1,0 +1,27 @@
+# Learn more about configuring your app at https://shopify.dev/docs/apps/tools/cli/configuration
+
+client_id = "501373c8f827630e0fcca73e7afc2ab2"
+name = "gbq-integration"
+application_url = "https://compilation-survive-dave-usually.trycloudflare.com"
+embedded = true
+handle = "gbq-integration"
+
+[webhooks]
+api_version = "2025-01"
+
+[access_scopes]
+# Learn more at https://shopify.dev/docs/apps/tools/cli/configuration#access_scopes
+scopes = "read_all_orders,read_customers,read_discounts,read_fulfillments,read_inventory,read_orders,read_products,read_reports,write_products"
+
+[auth]
+redirect_urls = [
+  "https://compilation-survive-dave-usually.trycloudflare.com/auth/callback",
+  "https://compilation-survive-dave-usually.trycloudflare.com/auth/shopify/callback",
+  "https://compilation-survive-dave-usually.trycloudflare.com/api/auth/callback"
+]
+
+[pos]
+embedded = false
+
+[build]
+automatically_update_urls_on_dev = true
